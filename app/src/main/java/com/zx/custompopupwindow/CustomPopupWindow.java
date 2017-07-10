@@ -69,14 +69,14 @@ public class CustomPopupWindow {
      * 显示在anchor控件的正下方，或者相对这个控件的位置
      *
      * @param anchor
-     * @param gravity
      * @param xoff
      * @param yoff
+     * @param gravity
      * @return
      */
-    public CustomPopupWindow showAsLaction(View anchor, int gravity, int xoff, int yoff) {
+    public CustomPopupWindow showAsDropDown(View anchor, int xoff, int yoff,int gravity) {
         if (mPopupWindow != null) {
-            mPopupWindow.showAsDropDown(anchor, gravity, xoff, yoff);
+            mPopupWindow.showAsDropDown(anchor, xoff, yoff,gravity);
         }
         return this;
     }
@@ -95,14 +95,14 @@ public class CustomPopupWindow {
     }
 
     /**
-     * 根据id设置pop内部的控件的焦点监听
+     * 根据id设置pop内部的控件的点击事件的监听
      *
      * @param viewId
      * @param listener
      */
-    public void setOnFocusListener(int viewId, View.OnFocusChangeListener listener) {
+    public void setOnClickListener(int viewId, View.OnClickListener listener) {
         View view = getItemView(viewId);
-        view.setOnFocusChangeListener(listener);
+        view.setOnClickListener(listener);
     }
 
     /**
